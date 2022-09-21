@@ -11,9 +11,9 @@ public class LoginPage extends PageObject{
     @Managed
     WebDriver driver = getDriver();
 
-    private By fieldUsername = By.id("user-name");
-    private By fieldPassword = By.id("password");
-    private By buttonLogin = By.id("login-button");
+    private final By fieldUsername = By.id("user-name");
+    private final By fieldPassword = By.id("password");
+    private final By buttonLogin = By.id("login-button");
 
     public void InputUsername(String username){
         driver.findElement(fieldUsername).sendKeys(username);

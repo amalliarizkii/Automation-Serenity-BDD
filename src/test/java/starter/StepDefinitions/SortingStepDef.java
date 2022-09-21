@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import starter.Pages.InventoryPage;
+
 import static org.junit.Assert.*;
 
 public class SortingStepDef {
@@ -21,14 +22,13 @@ public class SortingStepDef {
         inventoryPage.ClickButtonSorting();
 
     }
-    @And("I click Name (Z to A)")
+    @And("I click Name Z to A")
     public void ClickName(){
-        inventoryPage.ClickButtonSorting();
+        inventoryPage.ClickName();
 
     }
-    @Then("page inventory showed the product name from (Z to A)")
+    @Then("page inventory showed the product name from Z to A")
     public void PageInventoryShowedProductName(){
-        assertEquals("https://www.saucedemo.com/inventory.html",InventoryPage.getUrl());
-
+        assertEquals("https://www.saucedemo.com/inventory.html",inventoryPage.getUrl());
     }
 }
