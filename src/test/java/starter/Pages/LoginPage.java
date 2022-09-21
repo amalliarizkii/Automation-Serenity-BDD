@@ -26,10 +26,12 @@ public class LoginPage extends PageObject{
     }
 
     public void ClickButtonLogin(){
+
         driver.findElement(buttonLogin).click();
     }
 
     public String getUrl(){
+
         return driver.getCurrentUrl();
     }
 
