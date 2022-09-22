@@ -22,7 +22,7 @@ public class SortingStepDef {
         inventoryPage.ClickButtonSorting();
 
     }
-    @And("I click Name Z to A")
+    @And("I select Name Z to A")
     public void ClickName(){
         inventoryPage.ClickName();
 
