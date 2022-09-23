@@ -1,10 +1,15 @@
 Feature: Removing Functionality
 
-  Scenario: Remove the last added item from cart
-    Given I have logged in and added one product to the cart
-    When I click button sorting
-    And I click Name (Z to A)
-    And I click button add to cart for item "Test.allTheThings() T-Shirt (Red)"
+  Scenario Outline: Remove the last added item from cart
+    Given I already logged in
+    And I already added one item to cart
+    When I click sort by "<Filter>"
+    Then the product will be sorting by "<Filter>"
+    When I select product "add-to-cart-test.allthethings()-t-shirt-(red)"
     And I click shopping cart
-    And I click button remove for item "Test.allTheThings() T-Shirt (Red)"
-    Then item will deleted
+    Then I redirected to cart page
+    When I remove product "remove-test.allthethings()-t-shirt-(red)"
+#    Then the product will deleted
+    Examples:
+    | Filter        |
+    | Name (Z to A) |
