@@ -38,7 +38,4 @@ public class RemoveStepDef {
     public void TheProductWillDeleted(){
        assertEquals("1",cartPage.getCartPopUp());
    }
-
-
-
 }
