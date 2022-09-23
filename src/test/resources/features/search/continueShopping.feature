@@ -9,8 +9,10 @@ Feature: Continue Shopping Functionality
     And I click shopping cart
     Then I redirected to cart page
     When I remove product "remove-test.allthethings()-t-shirt-(red)"
-    And I click button continue shopping
+    Then the product will deleted
+    When I click button continue shopping
     Then I redirected to inventory page
     Examples:
       | Filter        |
       | Name (Z to A) |
+

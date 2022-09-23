@@ -1,4 +1,4 @@
-Feature: Removing Functionality
+Feature: Remove Functionality
 
   Scenario Outline: Remove the last added item from cart
     Given I already logged in
@@ -9,7 +9,7 @@ Feature: Removing Functionality
     And I click shopping cart
     Then I redirected to cart page
     When I remove product "remove-test.allthethings()-t-shirt-(red)"
-#    Then the product will deleted
+    Then the product will deleted
     Examples:
     | Filter        |
     | Name (Z to A) |

@@ -1,4 +1,4 @@
-Feature: Add to cart
+Feature: Add to cart Functionality
 
   Scenario: Add 1 item to cart
     Given I already logged in

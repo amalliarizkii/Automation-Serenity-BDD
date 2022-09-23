@@ -25,7 +25,8 @@ public class RemoveStepDef {
 
    @Then("I redirected to cart page")
    public void IRedirectedToCartPage(){
-       assertEquals("https://www.saucedemo.com/cart.html",cartPage.getUrl());
+        assertEquals("https://www.saucedemo.com/cart.html",cartPage.getUrl());
+       assertEquals("YOUR CART",cartPage.getHeaderTitle());
    }
 
    @And("I remove product {string}")
@@ -33,10 +34,10 @@ public class RemoveStepDef {
         cartPage.removeProduct(product);
    }
 
-//   @Then("the product will deleted")
-//    public void TheProductWillDeleted(){
-//
-//   }
+   @Then("the product will deleted")
+    public void TheProductWillDeleted(){
+       assertEquals("1",cartPage.getCartPopUp());
+   }
 
 
 

@@ -1,7 +1,6 @@
 package starter.StepDefinitions;
 
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import starter.Pages.CartPage;
 import starter.Pages.InventoryPage;
 
@@ -10,10 +9,8 @@ public class ContinueShoppingStepDef {
     InventoryPage inventoryPage;
     CartPage cartPage;
 
-    @And("I click button continue shopping")
+    @When("I click button continue shopping")
     public void IClickButtonContinueShopping (){
         cartPage.IClickButtonContinueShopping();
-
     }
-
 }

@@ -17,23 +17,17 @@ public class LoginPage extends PageObject{
 
     public void InputUsername(String username){
         driver.findElement(fieldUsername).sendKeys(username);
-
     }
 
     public void InputPassword(String password){
         driver.findElement(fieldPassword).sendKeys(password);
-
     }
 
     public void ClickButtonLogin(){
-
         driver.findElement(buttonLogin).click();
     }
 
     public String getUrl(){
-
         return driver.getCurrentUrl();
     }
-
-
 }
