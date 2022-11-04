@@ -18,12 +18,12 @@ public class PaymentPage extends PageObject {
 
     private final By ButtonPayment = By.id("contribute_button_lanjutkan-pembayaran");
 
-    public void ClickButtonPilih(){
-        driver.findElement(ButtonPilih).click();
+    public String getUrl() {
+        return driver.getCurrentUrl();
     }
 
-    public String getUrlPayment() {
-        return driver.getCurrentUrl();
+    public void ClickButtonPilih(){
+        driver.findElement(ButtonPilih).click();
     }
 
     public void InputName(String name) {

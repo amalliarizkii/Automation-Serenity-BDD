@@ -17,7 +17,7 @@ import org.openqa.selenium.WebDriver;
                 driver.findElement(campaignPicture).click();
         }
 
-        public String getUrlHome() {
+        public String getUrl() {
             return driver.getCurrentUrl();
         }
 

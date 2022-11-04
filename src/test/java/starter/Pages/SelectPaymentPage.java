@@ -13,12 +13,12 @@ public class SelectPaymentPage extends PageObject {
 
     private final By BCAButton = By.xpath("/html//div[@id='__next']/main/main/div[4]/div[2]//span[@class='self-center']");
 
-    public void ClickBCAButton(){
-        driver.findElement(BCAButton).click();
+    public String getUrl() {
+        return driver.getCurrentUrl();
     }
 
-    public String getUrlSelectPayment() {
-        return driver.getCurrentUrl();
+    public void ClickBCAButton(){
+        driver.findElement(BCAButton).click();
     }
 
     public String getHeaderTitle(){

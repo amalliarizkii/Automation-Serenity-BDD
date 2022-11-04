@@ -1,11 +1,14 @@
 package starter.Pages;
 
+import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+
 public class CampaignPage extends PageObject {
+
 
     @Managed
     WebDriver driver = getDriver();
@@ -14,7 +17,7 @@ public class CampaignPage extends PageObject {
 
     private final By ButtonDonasiNow = By.id("campaign-detail_button_donasi-sekarang");
 
-    public String getUrlCampaign(){
+    public String getUrl(){
         return driver.getCurrentUrl();
     }
     public String getTitleCampaign(){

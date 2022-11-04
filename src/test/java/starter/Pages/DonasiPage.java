@@ -16,7 +16,7 @@ public class DonasiPage extends PageObject {
 
     private final By ButtonLanjutPembayaran = By.id("contribute_button_lanjutkan-pembayaran");
 
-    public String getUrlDonasi(){
+    public String getUrl(){
         return driver.getCurrentUrl();
     }
     public String getTitleDonasi(){

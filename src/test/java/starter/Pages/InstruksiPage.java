@@ -14,12 +14,12 @@ public class InstruksiPage extends PageObject {
 
     private final By ButtonDonasiLain = By.xpath("/html//main[@id='summary-page']//button[.='Donasi ke penggalangan lain']");
 
-    public String getHeaderTitle(){
-        return driver.findElement(TitleInstruksi).getText();
+    public String getUrl() {
+        return driver.getCurrentUrl();
     }
 
-    public String getUrlInstruksi() {
-        return driver.getCurrentUrl();
+    public String getHeaderTitle(){
+        return driver.findElement(TitleInstruksi).getText();
     }
 
     public void ClickButtonDonasiLain(){

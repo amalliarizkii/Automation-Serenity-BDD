@@ -25,10 +25,14 @@ public class PaymentStepdefs {
     @Given("I already on home page")
     public void iAlreadyOnHomePage() {
         homepage.open();
-
+        try {
+            Thread.sleep(100000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    @When("I click one of the campaign")
+        @When("I click one of the campaign")
     public void ClickOneOfTheCampaign() {
         homepage.ClickOneOfTheCampaign();
 
@@ -36,7 +40,7 @@ public class PaymentStepdefs {
 
     @Then("I redirected to the campaign page")
     public void iRedirectedToTheCampaignPage() {
-        assertEquals("https://kitabisa.com/campaign/bantudekrasta",campaignpage.getUrlCampaign());
+        assertEquals("https://kitabisa.com/[campaign/bantudekrasta]",campaignpage.getUrl());
         assertEquals("Satu Mata Dik Rasta Bengkak Menonjol Keluar",campaignpage.getTitleCampaign());
     }
 
@@ -47,7 +51,7 @@ public class PaymentStepdefs {
 
     @Then("I reditected to the donasi amount page")
     public void iReditectedToTheDonasiAmountPage() {
-        assertEquals("https://kitabisa.com/campaign/bantudekrasta/donation-amount?slug=bantudekrasta",donasipage.getUrlDonasi());
+        assertEquals("https://kitabisa.com/campaign/bantudekrasta/donation-amount?slug=bantudekrasta",donasipage.getUrl());
         assertEquals("Masukkan Nominal Donasi",donasipage.getTitleDonasi());
 
     }
@@ -64,7 +68,7 @@ public class PaymentStepdefs {
 
     @Then("I redirected to payment method page")
     public void iRedirectedToPaymentMethodPage() {
-        assertEquals("https://kitabisa.com/campaign/bantudekrasta/contribute?auto_open_create_donation=true&slug=bantudekrasta",paymentpage.getUrlPayment());
+        assertEquals("https://kitabisa.com/campaign/bantudekrasta/contribute?auto_open_create_donation=true&slug=bantudekrasta",paymentpage.getUrl());
     }
 
     @When("I click pilih button")
@@ -74,7 +78,7 @@ public class PaymentStepdefs {
 
     @Then("I redirected to select payment method page")
     public void iRedirectedToSelectPaymentMethodPage() {
-        assertEquals("https://kitabisa.com/campaign/bantudekrasta/payment-option?auto_open_create_donation=true&slug=bantudekrasta",selectPaymentPage.getUrlSelectPayment());
+        assertEquals("https://kitabisa.com/campaign/bantudekrasta/payment-option?auto_open_create_donation=true&slug=bantudekrasta",selectPaymentPage.getUrl());
         assertEquals("Pembayaran instan (verifikasi otomatis, minimal nominal Rp.10,000)",selectPaymentPage.getHeaderTitle());
     }
 
@@ -100,7 +104,7 @@ public class PaymentStepdefs {
 
     @Then("I redirected to instruksi pembayaran page")
     public void iRedirectedToInstruksiPembayaranPage() {
-        assertEquals("https://kitabisa.com/campaign/bantudekrasta/contribute/summary/92927617?donate_to=non-proteksi",instruksiPage.getUrlInstruksi());
+        assertEquals("https://kitabisa.com/campaign/bantudekrasta/contribute/summary/92927617?donate_to=non-proteksi",instruksiPage.getUrl());
         assertEquals("Instruksi Pembayaran",instruksiPage.getHeaderTitle());
     }
 
@@ -111,6 +115,6 @@ public class PaymentStepdefs {
 
     @Then("I redirected to home page")
     public void iRedirectedToHomePage() {
-        assertEquals("https://kitabisa.com//",homepage.getUrlHome());
+        assertEquals("https://kitabisa.com//",homepage.getUrl());
     }
 }
